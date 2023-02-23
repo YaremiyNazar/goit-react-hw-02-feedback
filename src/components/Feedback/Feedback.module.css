@@ -1,0 +1,19 @@
+.wrapper {
+  width: 360px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 10px;
+}
+
+.section:not(:last-child) {
+  margin-bottom: 25px;
+}
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
