@@ -11,9 +11,4 @@
 .section:not(:last-child) {
   margin-bottom: 25px;
 }
-.title {
-  font-size: 24px;
-  font-weight: 700;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 10px;
-}
+

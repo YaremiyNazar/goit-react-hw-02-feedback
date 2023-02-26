@@ -5,6 +5,7 @@ import Statistics from 'components/Statistics/Statistics';
 import Notification from 'components/Notification/Notification';
 
 import css from '../Feedback/Feedback.module.css';
+import Section from 'components/Section/Section';
 
 class Feedback extends Component {
   state = {
@@ -38,21 +39,24 @@ class Feedback extends Component {
     return (
       <div className={css.wrapper}>
         <div className={css.section}>
-          <h3 className={css.title}>Please leave feedback</h3>
-          <FeedbackOptions
-            click={this.addCount}
-            options={Object.keys(this.state)}
-          />
+          <Section title="Please leave feedbac">
+            <FeedbackOptions
+              click={this.addCount}
+              options={Object.keys(this.state)}
+            />
+          </Section>
         </div>
-        {this.countTotalFeedback() ? (
-          <Statistics
-            allStates={this.state}
-            total={this.countTotalFeedback()}
-            positivePersentage={this.countPositiveFeedbackPercentage()}
-          />
-        ) : (
-          <Notification message="There is no feedback" />
-        )}
+        <Section title="Statistics">
+          {this.countTotalFeedback() ? (
+            <Statistics
+              allStates={this.state}
+              total={this.countTotalFeedback()}
+              positivePersentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
+        </Section>
       </div>
     );
   }

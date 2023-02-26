@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import css from '../Statistics/Statistics.module.css';
 
-const Statistics = ({ allStates, total, positivePersentage }) => (
+const Statistics = ({ allStates, title, total, positivePersentage }) => (
   <div className={css.section}>
-    <h3 className={css.title}>Statistics</h3>
+    <h3 className={css.title}>{title}</h3>
     <p>Good: {allStates.good}</p>
     <p>Neutral: {allStates.neutral}</p>
     <p>Bad: {allStates.bad}</p>
@@ -14,6 +14,14 @@ const Statistics = ({ allStates, total, positivePersentage }) => (
 
 Statistics.propTypes = {
   total: PropTypes.number.isRequired,
+  title: PropTypes.string,
   positivePersentage: PropTypes.number.isRequired,
+  allStates: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+
+
 };
 export default Statistics;
